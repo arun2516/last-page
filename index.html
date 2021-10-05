@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+
+ *{
+     margin: 0px;
+     padding: 0px;
+     box-sizing: border-box;
+     
+ }
+ 
+ 
+ nav{
+     display: flex;
+     justify-content: space-around;
+     align-items: center;
+     min-height: 8vh;
+     background-color: #5d4954;
+     font-family: 'Poppins',sans-serif;
+ 
+ }
+ .logo{
+     color: white;
+     text-transform: uppercase;
+     letter-spacing: 2px;
+     font-size: 20px;
+ }
+ .nav-links{
+     
+     display: flex;
+     justify-content: space-around;
+     width:30%;
+ }
+ 
+ .nav-links li{
+     list-style: none;
+ }
+ .nav-links a{
+     color: white;
+     text-decoration: none;
+     letter-spacing: 2px;
+     font-weight: bold;
+     font-size: 14px;
+ }
+ .burger{
+     display: none;
+     cursor: pointer;
+ }
+ 
+ .burger div{
+    width: 25px;
+    height: 2px;
+    background-color: white;
+    margin:5px;
+    transition: all 0.3s ease;
+ }
+
+ .container{
+     height: 100vh;
+     background-color:#222626 ;
+ }
+ .seadiv{
+     
+     height:30%;
+     
+ }
+ .search{
+       margin-left: 15%;
+       margin-top: 7%;
+       width: 40%;
+       height: 6vh;
+       border-radius: 10px;
+       padding-left: 2%;
+ }
+ .seabut{
+   
+    margin-left: 2%;
+    border-radius: 10px;
+    width: 7%;
+    height: 4vh;
+    font-size: 15px;
+    
+
+ }
+ .content{
+     height: 70%;
+     display: flex;
+     color:white;
+     width: 100%;
+     justify-content: space-around;
+     
+ }
+ .right{
+     align-self: center;
+     justify-self: center;
+ }
+
+
+ 
+ @media screen and (max-width:1024px) {
+     .nav-links{
+     
+         width:60%;
+     }
+   
+     }
+ 
+ 
+ 
+ 
+ @media screen and (max-width:768px) {
+    
+     
+     body{
+         overflow-x: hidden;
+     }
+    .nav-links{
+        position: absolute;
+        right:0px;
+        height: 92vh;
+        top:8vh;
+        background-color: #5D4954;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width:30% ;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+    }
+ 
+    .nav-links li{
+        opacity: 0;
+    }
+    .burger{
+        display: block;
+    }
+    
+     
+ }
+ 
+ .nav-active{
+     transform: translateX(0%);
+ }
+ 
+ @keyframes navLinkFade{
+     from{
+         opacity: 0 ;
+         transform:translateX(50px);
+     }
+     to{
+         opacity: 1;
+         transform:translateX(0px);
+     }
+ }
+ 
+ .toggle .line1{
+     transform: rotate(-45deg) translate(-5px,6px);
+ }
+ .toggle .line2{
+     opacity: 0;
+ }
+ .toggle .line3{
+     transform: rotate(45deg) translate(-5px,-6px);
+ }
+    </style>
+</head>
+<body >
+    <script >
+        let nav = document.createElement("nav");
+let div1 = document.createElement("div");
+div1.setAttribute("class","logo");
+let h4 = document.createElement("h4");
+h4.innerHTML="Anime-Flix";
+let ul = document.createElement("ul");
+ul.setAttribute("class","nav-links");
+
+let li = document.createElement("li");
+let a = document.createElement("a");
+a.innerHTML="Anime Search"
+a.setAttribute("href","#");
+
+let li1 = document.createElement("li");
+let a1 = document.createElement("a");
+a1.innerHTML="HOME"
+a1.setAttribute("href","#");
+let li2 = document.createElement("li");
+let a2 = document.createElement("a");
+a2.innerHTML="ABOUT"
+a2.setAttribute("href","#");
+let div2 = document.createElement("div");
+div2.setAttribute("class","burger");
+let div21 = document.createElement("div");
+div21.setAttribute("class","line1");
+let div22 = document.createElement("div");
+div22.setAttribute("class","line2");
+let div23 = document.createElement("div");
+div23.setAttribute("class","line3");
+
+div1.appendChild(h4);
+li.appendChild(a);
+li1.appendChild(a1);
+li2.appendChild(a2);
+ul.append(li,li1,li2);
+div2.append(div21,div22,div23);
+nav.append(div1,ul,div2);
+document.body.append(nav);
+
+
+
+let container = document.createElement("div");
+container.setAttribute("class","container");
+
+let seadiv = document.createElement("div");
+seadiv.setAttribute("class","seadiv");
+let search = document.createElement("input");
+search.setAttribute("class","search");
+search.setAttribute("type","text");
+search.setAttribute("placeholder","search your favourite Anime here");
+let seabut = document.createElement("button");
+seabut.setAttribute("type","submit")
+seabut.setAttribute("class","seabut");
+
+seabut.innerHTML="search"
+seadiv.append(search);
+seadiv.append(seabut);
+
+
+let content = document.createElement("div");
+content.setAttribute("class","content");
+
+let left = document.createElement("img");
+
+let right = document.createElement("div");
+right.setAttribute("class","right");
+let br = document.createElement("br");
+let p1 = document.createElement("p");
+p1.setAttribute("class","p1");
+let p2 = document.createElement("p");
+p2.setAttribute("class","p2");
+let p3 = document.createElement("p");
+p3.setAttribute("class","p3");
+let p4 = document.createElement("p");
+p4.setAttribute("class","p4");
+let p5 = document.createElement("p");
+p5.setAttribute("class","p5");
+right.append(p1,br,p2,br,p3,br,p4,br,p5);
+
+
+content.append(left,right);
+
+container.append(seadiv,content);
+document.body.append(container);
+
+
+
+
+let url ="https://api.jikan.moe/v3/search/anime?q=anime";
+
+seabut.addEventListener("click",foo);
+async function foo(){
+    let url ="https://api.jikan.moe/v3/search/anime?q=anime";
+    var x = document.querySelector("input");
+    var val = x.value;
+    
+    let rescont = await fetch(url);
+    let rescontdata = await rescont.json();
+    let res = rescontdata.results;
+    console.log(res);
+    for(var i in res){
+        if(res[i].title == val){
+            let title = res[i].title;
+            let startdate = res[i].start_date;
+            let enddate = res[i].end_date;
+            let type = res[i].type;
+            let rating = res[i].rated;
+            left.setAttribute("src",`${res[i].image_url}`);
+            
+            p1.innerHTML=`Title is : ${title}`;
+           
+            p2.innerHTML=`Start Date is : ${startdate}`;
+            
+            p3.innerHTML=`End Date is : ${enddate}`;
+            
+            p4.innerHTML=`Type:${type}`;
+           
+            p5.innerHTML= `Rating : ${rating}`;
+            
+           
+            
+    }
+
+}
+
+
+}
+
+
+
+
+const navslide=()=>{
+    const burger = document.querySelector('.burger');
+    const nav = document.querySelector('.nav-links');
+    const navLinks = document.querySelectorAll('.nav-links li');
+
+    // toggle nav
+    burger.addEventListener('click',()=>{
+
+        nav.classList.toggle('nav-active');
+         
+
+       //animate links 
+        navLinks.forEach((link,index) =>{
+            if(link.style.animation){
+                link.style.animation='';
+            }else{
+                link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
+            }
+        });
+
+        //burger animation
+
+        burger.classList.toggle('toggle');
+    });
+
+    
+
+    
+
+}
+
+navslide();
+
+
+
+  </script>
+</body>
+</html>
